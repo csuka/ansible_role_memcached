@@ -1,0 +1,20 @@
+---
+- name: ensure memcached is installed
+  dnf:
+    name: memcached
+  register: memcached_install
+
+- name: set memcached config
+  template:
+    src: memcached.conf.j2
+    dest: /etc/sysconfig/memcached
+    owner: root
+    group: root
+    mode: '0644'
+  notify: restart memcached
+
+- name: ensure memcached is started and enabled
+  service:
+    name: memcached
+    state: started
+    enabled: true
