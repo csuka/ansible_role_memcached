@@ -1,11 +1,8 @@
 # Ansible Role: Memcached
 
-An Ansible Role that installs Memcached on RedHat/CentOS/OL 7. Tested with Ansible v2.9 and higher.
+An Ansible Role that configures and installs MemcacheD on EL 8.
 
- * 1.0.0 initial release
- * 1.0.1 lowercase memcached user in template
-
-## Vars
+## variables
 
 The configuration is by default set at `/etc/sysconfig/memcached`.
 
