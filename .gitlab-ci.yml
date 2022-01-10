@@ -7,9 +7,8 @@ services:
     command: ["dockerd-entrypoint.sh"]
 
 variables:
-  DOCKER_HOST: tcp://docker:2375/
   DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: ""
+  DOCKER_TLS_CERTDIR: "/certs"
 
 stages:
   - test
@@ -35,7 +34,6 @@ molecule:
     - ansible --version
     - molecule --version
     - molecule test -s default  # single
-    - molecule test -s cluster  # cluster and cluster + 1 to test auto-scaling
   except:
     changes:
       - README.md
