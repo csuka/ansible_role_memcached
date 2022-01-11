@@ -1,8 +1,8 @@
-# Ansible Role: Memcached
+# Memcached
 
-An Ansible Role that configures and installs MemcacheD on EL 8.
+An Ansible role that installs, configures and manages memcached for EL 8.
 
-## variables
+## Variables
 
 The configuration is by default set at `/etc/sysconfig/memcached`.
 
